@@ -116,13 +116,58 @@
   font-size: var(--font-size-lead);
 }
 
+.detail-demo-action__label {
+  margin-bottom: var(--space-3);
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.detail-demo-action__choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
 .detail-demo-action .button {
-  min-width: 13rem;
+  min-height: 2.875rem;
+  padding-inline: var(--space-4);
   border-color: var(--color-detail-strong);
   background: var(--color-detail-strong);
   color: #fff;
   font-weight: 700;
   text-align: center;
+}
+
+.detail-demo-action__choice {
+  flex: 1 1 10rem;
+}
+
+.detail-demo-action .detail-demo-action__choice {
+  border-color: var(--demo-theme-color);
+  background: var(--demo-theme-color);
+  color: #fff;
+}
+
+.detail-demo-action .detail-demo-action__choice[data-theme="olivo"] {
+  --demo-theme-color: #52684F;
+  --demo-theme-hover: #40543E;
+}
+
+.detail-demo-action .detail-demo-action__choice[data-theme="azul"] {
+  --demo-theme-color: #496B82;
+  --demo-theme-hover: #38566B;
+}
+
+.detail-demo-action .detail-demo-action__choice[data-theme="vino"] {
+  --demo-theme-color: #793D4D;
+  --demo-theme-hover: #62303D;
+}
+
+.detail-demo-action .detail-demo-action__choice:hover {
+  border-color: var(--demo-theme-hover);
+  background: var(--demo-theme-hover);
+  color: #fff;
 }
 
 .detail-demo-action .button:hover {

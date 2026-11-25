@@ -218,6 +218,52 @@
     action.append(button);
   }
 
+  function renderDemoActions(model) {
+    const action = document.querySelector("#detail-demo-action");
+    if (typeof model.demoUrl !== "string" || !/^https:\/\//i.test(model.demoUrl)) return;
+
+    const themes = Array.isArray(model.demoThemes)
+      ? model.demoThemes.filter((item) => item && /^[a-z0-9-]+$/.test(item.theme) && typeof item.label === "string" && item.label.trim())
+      : [];
+
+    if (themes.length) {
+      const label = document.createElement("p");
+      label.className = "detail-demo-action__label";
+      label.textContent = "Explora sus colores:";
+
+      const links = document.createElement("div");
+      links.className = "detail-demo-action__choices";
+      links.setAttribute("role", "group");
+      links.setAttribute("aria-label", `Demos de ${model.name} por paleta de color`);
+
+      themes.forEach((item) => {
+        const url = new URL(model.demoUrl);
+        url.searchParams.set("tema", item.theme);
+        const link = document.createElement("a");
+        link.className = "button detail-demo-action__choice";
+        link.dataset.theme = item.theme;
+        link.href = url.href;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = item.label;
+        link.setAttribute("aria-label", `Ver demo de ${model.name} en colores ${item.label} (se abre en una pestaña nueva)`);
+        links.append(link);
+      });
+
+      action.append(label, links);
+      return;
+    }
+
+    const demo = document.createElement("a");
+    demo.className = "button";
+    demo.href = model.demoUrl;
+    demo.target = "_blank";
+    demo.rel = "noopener noreferrer";
+    demo.textContent = "Ver demo interactiva";
+    demo.setAttribute("aria-label", `Ver demo interactiva: ${model.name} (se abre en una pestaña nueva)`);
+    action.append(demo);
+  }
+
   function showError() {
     status.hidden = true;
     errorPanel.hidden = false;
@@ -256,17 +302,7 @@
       setText("#detail-title", model.name);
       setText("#detail-description", model.description || "Una invitaci\u00f3n digital para compartir los detalles de tu celebraci\u00f3n.");
 
-      const demoAction = document.querySelector("#detail-demo-action");
-      if (typeof model.demoUrl === "string" && /^https:\/\//i.test(model.demoUrl)) {
-        const demo = document.createElement("a");
-        demo.className = "button";
-        demo.href = model.demoUrl;
-        demo.target = "_blank";
-        demo.rel = "noopener noreferrer";
-        demo.textContent = "Ver demo interactiva";
-        demo.setAttribute("aria-label", `Ver demo interactiva: ${model.name} (se abre en una pesta\u00f1a nueva)`);
-        demoAction.append(demo);
-      }
+      renderDemoActions(model);
 
       renderImage(model);
       renderPersonalization(model);

@@ -14,6 +14,11 @@
         "catalogDetailsCapture": "assets/invitaciones/boda-demo-event-details.webp"
       },
       "demoUrl": "https://encantodigitalec.github.io/DemoBodas/",
+      "demoThemes": [
+        { "theme": "olivo", "label": "Olivo" },
+        { "theme": "azul", "label": "Azul acero" },
+        { "theme": "vino", "label": "Vino y piedra" }
+      ],
       "personalization": {
         "texts": true
       },
