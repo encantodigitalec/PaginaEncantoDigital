@@ -43,6 +43,7 @@
       model.images && typeof model.images === "object" &&
       (!model.images.desktop || validImagePath(model.images.desktop)) &&
       (!model.images.mobile || validImagePath(model.images.mobile)) &&
+      (!model.images.detail || validImagePath(model.images.detail)) &&
       (!model.images.catalogCapture || validImagePath(model.images.catalogCapture)) &&
       (!model.images.catalogStoryCapture || validImagePath(model.images.catalogStoryCapture)) &&
       (!model.images.catalogDetailsCapture || validImagePath(model.images.catalogDetailsCapture)) &&
@@ -75,11 +76,14 @@
     media.className = "card__media";
     if (model.images.catalogCapture) {
       media.classList.add("card__media--premium");
+      if (model.category === "cumpleanos") media.classList.add("card__media--birthday");
 
       const ornament = document.createElement("span");
       ornament.className = "card__floral";
       ornament.setAttribute("aria-hidden", "true");
-      ornament.innerHTML = '<svg viewBox="0 0 160 200" focusable="false"><path d="M18 188C52 144 92 90 136 16"/><path d="M48 149c-24 1-39-12-45-35 24 0 40 12 45 35Zm23-38c-1-24 11-40 33-47 1 24-11 40-33 47Zm21-37c-23-4-36-20-38-44 23 4 36 20 38 44Zm-62 93c-18-14-22-33-12-54 18 14 22 33 12 54Zm83-113c-17-14-20-33-9-53 17 14 20 33 9 53Z"/></svg>';
+      ornament.innerHTML = model.category === "cumpleanos"
+        ? '<svg viewBox="0 0 160 200" focusable="false"><path d="m26 26 5 13 13 5-13 5-5 13-5-13-13-5 13-5 5-13Zm91 18 4 10 10 4-10 4-4 10-4-10-10-4 10-4 4-10ZM61 110l6 15 15 6-15 6-6 15-6-15-15-6 15-6 6-15Zm68 30 4 10 10 4-10 4-4 10-4-10-10-4 10-4 4-10Z"/></svg>'
+        : '<svg viewBox="0 0 160 200" focusable="false"><path d="M18 188C52 144 92 90 136 16"/><path d="M48 149c-24 1-39-12-45-35 24 0 40 12 45 35Zm23-38c-1-24 11-40 33-47 1 24-11 40-33 47Zm21-37c-23-4-36-20-38-44 23 4 36 20 38 44Zm-62 93c-18-14-22-33-12-54 18 14 22 33 12 54Zm83-113c-17-14-20-33-9-53 17 14 20 33 9 53Z"/></svg>';
 
       const captures = [
         { src: model.images.catalogStoryCapture, position: "left" },
@@ -158,6 +162,9 @@
       const demo = document.createElement("a");
       demo.className = "button button--card button--demo";
       demo.href = model.demoUrl;
+      if (Array.isArray(model.demoOptions) && model.demoOptions[0]) {
+        demo.dataset.theme = model.demoOptions[0].theme;
+      }
       demo.target = "_blank";
       demo.rel = "noopener noreferrer";
       demo.textContent = "Ver demo";

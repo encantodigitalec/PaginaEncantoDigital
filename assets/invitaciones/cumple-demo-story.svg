@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" role="img" aria-label="Mensaje de invitación de cumpleaños">
+  <rect width="390" height="844" fill="#fbf4ee"/>
+  <path d="M0 0h390v176c-86 33-186 33-390-5Z" fill="#ead0c7"/>
+  <circle cx="44" cy="140" r="68" fill="#fff7ef" fill-opacity=".44"/>
+  <circle cx="344" cy="74" r="55" fill="#d99388" fill-opacity=".3"/>
+  <text x="195" y="80" fill="#744c4b" font-family="Arial,sans-serif" font-size="12" letter-spacing="3" text-anchor="middle">UNA INVITACIÓN ESPECIAL</text>
+  <text x="195" y="290" fill="#a45449" font-family="Georgia,serif" font-size="42" text-anchor="middle">Una noche</text>
+  <text x="195" y="342" fill="#a45449" font-family="Georgia,serif" font-size="42" text-anchor="middle">para celebrar</text>
+  <path d="M147 376h96" stroke="#d39b87" stroke-width="1.5"/>
+  <text x="195" y="435" fill="#5b4948" font-family="Georgia,serif" font-size="18" text-anchor="middle">Me hace ilusión reunir a</text>
+  <text x="195" y="464" fill="#5b4948" font-family="Georgia,serif" font-size="18" text-anchor="middle">quienes quiero para crear</text>
+  <text x="195" y="493" fill="#5b4948" font-family="Georgia,serif" font-size="18" text-anchor="middle">recuerdos juntos.</text>
+  <rect x="46" y="568" width="298" height="184" rx="16" fill="#fff" stroke="#e7d2c9"/>
+  <image href="cumple-pastel.jpg" x="58" y="580" width="274" height="160" preserveAspectRatio="xMidYMid slice"/>
+  <text x="195" y="802" fill="#a45449" font-family="Arial,sans-serif" font-size="12" letter-spacing="2" text-anchor="middle">SERÁ UN GUSTO VERTE</text>
+</svg>

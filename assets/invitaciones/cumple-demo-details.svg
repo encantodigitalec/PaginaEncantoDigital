@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" role="img" aria-label="Fecha y lugar de una celebración de cumpleaños">
+  <rect width="390" height="844" fill="#f8eee8"/>
+  <path d="M0 0h390v112H0z" fill="#a45449"/>
+  <text x="195" y="54" fill="#fff8f2" font-family="Arial,sans-serif" font-size="12" letter-spacing="3" text-anchor="middle">CELEBRACIÓN</text>
+  <text x="195" y="82" fill="#fff8f2" font-family="Georgia,serif" font-size="21" text-anchor="middle">Todos los detalles</text>
+  <rect x="40" y="157" width="310" height="215" rx="18" fill="#fffaf6" stroke="#e4c8bd"/>
+  <circle cx="195" cy="206" r="23" fill="#f2ddd4"/>
+  <path d="M195 191v15l10 6" fill="none" stroke="#a45449" stroke-width="2" stroke-linecap="round"/>
+  <text x="195" y="263" fill="#a45449" font-family="Arial,sans-serif" font-size="12" letter-spacing="2" text-anchor="middle">SÁBADO</text>
+  <text x="195" y="302" fill="#493a39" font-family="Georgia,serif" font-size="26" text-anchor="middle">20 de marzo</text>
+  <text x="195" y="336" fill="#756563" font-family="Arial,sans-serif" font-size="14" text-anchor="middle">18:30</text>
+  <rect x="40" y="404" width="310" height="202" rx="18" fill="#fffaf6" stroke="#e4c8bd"/>
+  <circle cx="195" cy="453" r="23" fill="#f2ddd4"/>
+  <path d="M195 439c-9 0-14 7-14 14 0 11 14 25 14 25s14-14 14-25c0-7-5-14-14-14Zm0 19a5 5 0 1 1 0-10 5 5 0 0 1 0 10Z" fill="#a45449"/>
+  <text x="195" y="516" fill="#493a39" font-family="Georgia,serif" font-size="22" text-anchor="middle">Lugar de celebración</text>
+  <text x="195" y="548" fill="#756563" font-family="Arial,sans-serif" font-size="14" text-anchor="middle">Cuenca, Ecuador</text>
+  <rect x="88" y="565" width="214" height="28" rx="14" fill="#a45449"/>
+  <text x="195" y="584" fill="#fff" font-family="Arial,sans-serif" font-size="10" letter-spacing="1" text-anchor="middle">VER UBICACIÓN</text>
+  <text x="195" y="692" fill="#a45449" font-family="Georgia,serif" font-size="24" text-anchor="middle">¡Te esperamos!</text>
+  <path d="M120 715h150" stroke="#d39b87"/>
+  <text x="195" y="755" fill="#756563" font-family="Arial,sans-serif" font-size="12" letter-spacing="1" text-anchor="middle">CONFIRMA TU ASISTENCIA</text>
+</svg>

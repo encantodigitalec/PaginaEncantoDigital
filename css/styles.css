@@ -645,6 +645,10 @@ button:hover {
   background: linear-gradient(140deg, #F1E9DF, #E6D8C8 52%, #F4EEE6);
 }
 
+.card__media--birthday {
+  background: linear-gradient(145deg, #F6E4DF, #F3DDD4 52%, #F7EEE6);
+}
+
 .card__media--premium::before {
   position: absolute;
   z-index: 1;
@@ -685,6 +689,10 @@ button:hover {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 2;
+}
+
+.card__media--birthday .card__floral {
+  color: #C77978;
 }
 
 .card__media picture {
@@ -805,6 +813,16 @@ button:hover {
   border-color: var(--color-detail-strong);
   background: var(--color-detail-strong);
   color: #fff;
+}
+
+.invitation-card .button--demo[data-theme="mujer"] {
+  border-color: #A45449;
+  background: #A45449;
+}
+
+.invitation-card .button--demo[data-theme="mujer"]:hover {
+  border-color: #843F37;
+  background: #843F37;
 }
 
 .invitation-card .button--demo:hover {

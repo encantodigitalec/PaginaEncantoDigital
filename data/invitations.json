@@ -42,6 +42,50 @@
         "Textos para la invitaci\u00f3n",
         "Datos para la confirmaci\u00f3n de asistencia"
       ]
+    },
+    {
+      "id": "cumpleanos-001",
+      "name": "Invitaci\u00f3n de cumplea\u00f1os",
+      "category": "cumpleanos",
+      "description": "Una invitaci\u00f3n digital alegre y personalizable para compartir todos los detalles de tu cumplea\u00f1os.",
+      "published": true,
+      "order": 2,
+      "images": {
+        "detail": "assets/invitaciones/cumple-pastel.jpg",
+        "catalogCapture": "assets/invitaciones/cumple-demo-screen.svg",
+        "catalogStoryCapture": "assets/invitaciones/cumple-demo-story.svg",
+        "catalogDetailsCapture": "assets/invitaciones/cumple-demo-details.svg",
+        "alt": "Pastel de cumplea\u00f1os decorado con flores y velas"
+      },
+      "demoUrl": "https://encantodigitalec.github.io/DemoCumpleanios/?demo=mujer",
+      "demoOptions": [
+        { "param": "demo", "value": "mujer", "label": "Mujer", "theme": "mujer" },
+        { "param": "demo", "value": "nino", "label": "Ni\u00f1o", "theme": "nino" },
+        { "param": "demo", "value": "hombre", "label": "Hombre", "theme": "hombre" }
+      ],
+      "personalization": {
+        "texts": true,
+        "colors": true
+      },
+      "features": {
+        "music": true,
+        "map": true,
+        "rsvp": true,
+        "countdown": true,
+        "gallery": true,
+        "calendar": true
+      },
+      "included": [
+        "Invitaci\u00f3n digital con enlace para compartir.",
+        "Las secciones y funciones indicadas para este dise\u00f1o."
+      ],
+      "requirements": [
+        "Nombre y edad de quien celebra",
+        "Fecha y horarios del evento",
+        "Ubicaci\u00f3n y direcci\u00f3n",
+        "Textos para la invitaci\u00f3n",
+        "Datos para la confirmaci\u00f3n de asistencia"
+      ]
     }
   ]
 }

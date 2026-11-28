@@ -164,13 +164,28 @@
   --demo-theme-hover: #62303D;
 }
 
+.detail-demo-action .detail-demo-action__choice[data-theme="mujer"] {
+  --demo-theme-color: #A45449;
+  --demo-theme-hover: #843F37;
+}
+
+.detail-demo-action .detail-demo-action__choice[data-theme="nino"] {
+  --demo-theme-color: #2859A6;
+  --demo-theme-hover: #20477F;
+}
+
+.detail-demo-action .detail-demo-action__choice[data-theme="hombre"] {
+  --demo-theme-color: #245564;
+  --demo-theme-hover: #1A404C;
+}
+
 .detail-demo-action .detail-demo-action__choice:hover {
   border-color: var(--demo-theme-hover);
   background: var(--demo-theme-hover);
   color: #fff;
 }
 
-.detail-demo-action .button:hover {
+.detail-demo-action .button:not(.detail-demo-action__choice):hover {
   border-color: #87492D;
   background: #87492D;
   color: #fff;

@@ -87,10 +87,11 @@
 
   function renderImage(model) {
     const visual = document.querySelector("#detail-visual");
+    const detailImage = model.images && model.images.detail;
     const capture = model.images && model.images.catalogCapture;
     const desktop = model.images && model.images.desktop;
     const mobile = model.images && model.images.mobile;
-    const imagePath = capture || desktop || mobile;
+    const imagePath = detailImage || capture || desktop || mobile;
 
     if (!imagePath) {
       visual.classList.add("detail-visual--empty");
@@ -100,10 +101,10 @@
       return;
     }
 
-    if (capture) visual.classList.add("detail-visual--phone");
+    if (!detailImage && capture) visual.classList.add("detail-visual--phone");
 
     const picture = document.createElement("picture");
-    if (!capture && mobile) {
+    if (!detailImage && !capture && mobile) {
       const source = document.createElement("source");
       source.media = "(max-width: 40rem)";
       source.srcset = new URL(mobile, siteRoot).href;
@@ -222,23 +223,29 @@
     const action = document.querySelector("#detail-demo-action");
     if (typeof model.demoUrl !== "string" || !/^https:\/\//i.test(model.demoUrl)) return;
 
+    const options = Array.isArray(model.demoOptions)
+      ? model.demoOptions.filter((item) => item && /^[a-z][a-z0-9_-]*$/.test(item.param) && /^[a-z0-9-]+$/.test(item.value) && typeof item.label === "string" && item.label.trim() && /^[a-z0-9-]+$/.test(item.theme))
+      : [];
     const themes = Array.isArray(model.demoThemes)
       ? model.demoThemes.filter((item) => item && /^[a-z0-9-]+$/.test(item.theme) && typeof item.label === "string" && item.label.trim())
       : [];
+    const choices = options.length ? options : themes.map((item) => ({ ...item, param: "tema", value: item.theme }));
 
-    if (themes.length) {
+    if (choices.length) {
       const label = document.createElement("p");
       label.className = "detail-demo-action__label";
-      label.textContent = "Explora sus colores:";
+      label.textContent = options.length ? "Explora las demos:" : "Explora sus colores:";
 
       const links = document.createElement("div");
       links.className = "detail-demo-action__choices";
       links.setAttribute("role", "group");
-      links.setAttribute("aria-label", `Demos de ${model.name} por paleta de color`);
+      links.setAttribute("aria-label", options.length
+        ? `Demos de ${model.name} por plantilla`
+        : `Demos de ${model.name} por paleta de color`);
 
-      themes.forEach((item) => {
+      choices.forEach((item) => {
         const url = new URL(model.demoUrl);
-        url.searchParams.set("tema", item.theme);
+        url.searchParams.set(item.param, item.value);
         const link = document.createElement("a");
         link.className = "button detail-demo-action__choice";
         link.dataset.theme = item.theme;
@@ -246,7 +253,8 @@
         link.target = "_blank";
         link.rel = "noopener noreferrer";
         link.textContent = item.label;
-        link.setAttribute("aria-label", `Ver demo de ${model.name} en colores ${item.label} (se abre en una pestaña nueva)`);
+        const choiceDescription = options.length ? `para la plantilla ${item.label}` : `en colores ${item.label}`;
+        link.setAttribute("aria-label", `Ver demo de ${model.name} ${choiceDescription} (se abre en una pestaña nueva)`);
         links.append(link);
       });
 
